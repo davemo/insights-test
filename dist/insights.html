@@ -1,0 +1,12 @@
+<!-- ul.industries>li*8>i.icon+span.tagline{clothing} -->
+
+<h1>Insights</h1>
+
+<ul class="industries">
+  <li class="{{insight.name}}" ng-class="{selected:isSelected(insight.name)}" ng-repeat="insight in insights" ng-click="toggleSelected(insight.name)">
+    <i></i>
+    <span class="tagline">{{insight.tagline}}</span>
+  </li>
+</ul>
+
+<button ng-click="submitInsights(selectedInsights)">Give me Insight</button>

@@ -1,0 +1,99 @@
+$darkGray: #2d3537;
+$mediumGray: #7b7f81;
+$lightGray: #dddcdc;
+$indianRed: #cb4e50;
+$skyBlue: #69bbdf;
+
+$list-width: 60%;
+$item-margin: 2em;
+$item-width: calc(25% - #{$item-margin});
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: $darkGray;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-weight: normal;
+}
+
+button {
+  outline: none;
+  box-shadow: 0 6px #ab3c3c;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  background-color: $indianRed;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 40px;
+  color: white;
+  margin-top: 30px;
+  &:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+  }
+  &:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+  }
+}
+
+.clothing {
+  i {
+    background-image: url("/img/shirt.svg");
+  }
+}
+
+.message {
+  color: $lightGray;
+}
+
+.industries {
+  padding: 0;
+  padding-left: 1em;
+  width: $list-width;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 14px;
+  text-align: center;
+  li {
+    padding: 20px;
+    color: $lightGray;
+    background-color: $mediumGray;
+    display: block;
+    width: $item-width;
+    float: left;
+    margin-right: $item-margin;
+    margin-bottom: $item-margin;
+    &:hover {
+      cursor: pointer;
+    }
+    &.selected {
+      background-color: $skyBlue;
+      color: white;
+    }
+    i {
+      margin: 0 auto;
+      background-size: contain;
+      display: block;
+      width: 110px;
+      height: 110px;
+    }
+    span {
+      overflow: hidden;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &:nth-child(5) {
+      clear: both;
+    }
+  }
+}
