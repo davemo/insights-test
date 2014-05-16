@@ -45,12 +45,6 @@ button {
   }
 }
 
-.clothing {
-  i {
-    background-image: url("/img/shirt.svg");
-  }
-}
-
 .message {
   color: $lightGray;
 }
@@ -78,6 +72,9 @@ button {
     &.selected {
       background-color: $skyBlue;
       color: white;
+      i {
+        opacity: 1;
+      }
     }
     i {
       margin: 0 auto;
@@ -85,6 +82,7 @@ button {
       display: block;
       width: 110px;
       height: 110px;
+      opacity: 0.3;
     }
     span {
       overflow: hidden;
@@ -94,6 +92,16 @@ button {
     }
     &:nth-child(5) {
       clear: both;
+    }
+  }
+}
+
+$industries: clothing, jewelry, bags, health, food, home, electronics, random;
+
+@each $industry in $industries {
+  .#{$industry} {
+    i {
+      background: url("/img/#{$industry}.svg") no-repeat;
     }
   }
 }
